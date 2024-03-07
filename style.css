@@ -1,5 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Micro+5&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Micro+5&family=Play:wght@400;700&display=swap");
+
+body {
+  height: 100vh;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(67, 153, 133, 0.30575980392156865) 22%
+  );
+}
+
+.display-font {
+  font-family: "Micro 5", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.number-font-regular {
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.number-font-bold {
+  font-family: "Play", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .container {
-  width: 1020px;
+  width: auto;
+  border: 1px solid black;
+  padding-left: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .parent {
@@ -7,11 +48,30 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-row-gap: 10px;
+}
+
+.number,
+.operator {
+  font-family: "Play", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 40px;
+}
+
+input {
+  width: 50px;
+  height: 50px;
 }
 
 .div1 {
   grid-area: 1 / 1 / 2 / 6;
+  background-color: cadetblue;
+  margin-right: 10px;
+  font-family: "Micro 5", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 55px;
 }
 .div2 {
   grid-area: 2 / 1 / 3 / 2;
