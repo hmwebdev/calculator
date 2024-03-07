@@ -21,18 +21,16 @@ const divide = (num1, num2) => {
   return num1 / num2;
 };
 
-const equal = () => {};
-
 const operate = (num1, op, num2) => {
   let total;
   if (op === "+") {
-    total = add(num1, num2);
+    total = add(Number(num1), Number(num2));
   } else if (op === "-") {
-    total = substract(num1, num2);
+    total = substract(Number(num1), Number(num2));
   } else if (op === "x") {
-    total = multiply(num1, num2);
+    total = multiply(Number(num1), Number(num2));
   } else if (op === "/") {
-    total = divide(num1, num2);
+    total = divide(Number(num1), Number(num2));
   }
   return total;
 };
@@ -45,17 +43,24 @@ const clear = () => {
   display.innerHTML = "";
 };
 
-const displayOperator = (op) => {
-  if (op === "+") {
-    display.innerHTML += "+";
-  } else if (op === "-") {
-    display.innerHTML += "-";
-  } else if (op === "x") {
-    display.innerHTML += "x";
-  } else if (op === "/") {
-    display.innerHTML += "/";
-  }
-  //display.innerHTML += op;
+const setFirstNum = () => {
+  firstNum = display.innerHTML;
+};
+
+const setOperator = (op) => {
+  setFirstNum();
+  operator = op;
+  clear();
+};
+
+const setSecondNum = () => {
+  secondNum = display.innerHTML;
+};
+
+const equal = () => {
+  setSecondNum();
+  console.log([firstNum, secondNum, operator]);
+  display.innerHTML = operate(firstNum, operator, secondNum);
 };
 
 // Watchers
