@@ -1,7 +1,7 @@
 // Global Vars
-let display = document.querySelector("#output");
-let clr = document.querySelector("#button-C");
-let firstNum, secondNum, operator;
+const display = document.querySelector("#output");
+const clr = document.querySelector("#button-clear");
+let firstNum, secondNum, operator, secondOperator;
 
 // Functions
 
@@ -18,7 +18,8 @@ const multiply = (num1, num2) => {
 };
 
 const divide = (num1, num2) => {
-  return num1 / num2;
+  let total = num1 / num2;
+  return Math.round(total * 10 ** 2) / 10 ** 2;
 };
 
 const operate = (num1, op, num2) => {
@@ -31,6 +32,9 @@ const operate = (num1, op, num2) => {
     total = multiply(Number(num1), Number(num2));
   } else if (op === "/") {
     total = divide(Number(num1), Number(num2));
+    if (total === undefined || total === Infinity) {
+      return (display.innerHTML = "ERR");
+    }
   }
   return total;
 };

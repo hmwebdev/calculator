@@ -46,7 +46,7 @@ body {
 .parent {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 10px;
 }
@@ -65,7 +65,7 @@ input {
 }
 
 .div1 {
-  grid-area: 1 / 1 / 2 / 6;
+  grid-area: 1 / 1 / 2 / 5;
   background-color: cadetblue;
   margin-right: 10px;
   font-family: "Micro 5", sans-serif;
@@ -120,4 +120,11 @@ input {
 }
 .div17 {
   grid-area: 5 / 4 / 6 / 5;
+}
+.div18 {
+  grid-area: 6 / 1 / 7 / 5;
+}
+
+#button-equal {
+  width: 100%;
 }
